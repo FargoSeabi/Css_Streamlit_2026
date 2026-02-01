@@ -8,23 +8,26 @@ st.set_page_config(
     page_icon="👨‍💻"
 )
 
-# Load images (replace with your own file paths)
-try:
-    profile_pic = Image.open("profile-pic.jpg")  # Your profile picture
-    python_logo = Image.open("python-pic.png")
-    js_logo = Image.open("pic.png")
-    html_logo = Image.open("html.png")
-    css_logo = Image.open("css.png")
-    git_logo = Image.open("git.png")
-    sql_logo = Image.open("mysql.png")
-    
-except:
-    st.warning("Images not found. Make sure your image files are in the same folder.")
+# Function to safely load images
+def load_image(path):
+    try:
+        return Image.open(path)
+    except:
+        return None  # Image missing, return None
+
+# Load images
+profile_pic = load_image("profile-pic.jpg")
+python_logo = load_image("python-pic.png")
+js_logo = load_image("pic.png")
+html_logo = load_image("html.png")
+css_logo = load_image("css.png")
+git_logo = load_image("git.png")
+sql_logo = load_image("mysql.png")
 
 # HEADER
 col1, col2 = st.columns([1, 3])
 with col1:
-    if 'profile_pic' in locals():
+    if profile_pic:
         st.image(profile_pic, width=150)
 with col2:
     st.title("👋 Moses Seabi")
@@ -47,13 +50,22 @@ I enjoy learning new technologies and applying them to solve real-world problems
 
 st.markdown("---")
 
+# EDUCATION
+st.header("Education")
+st.write("""
+- **Bachelor of Science in Computer Science**, University of Limpopo, South Africa (2023 – Present)  
+- **National Senior Certificate**, Limpopo Province (2018 – 2022)
+""")
+
+st.markdown("---")
+
 # SKILLS
 st.header("Skills")
 
 cols = st.columns(4)
 
 skills = [
-     {"name": "Python", "image": python_logo},
+    {"name": "Python", "image": python_logo},
     {"name": "JavaScript", "image": js_logo},
     {"name": "HTML", "image": html_logo},
     {"name": "CSS", "image": css_logo},
@@ -63,7 +75,7 @@ skills = [
 
 for i, skill in enumerate(skills):
     col = cols[i % 4]
-    if 'image' in skill and skill["image"] is not None:
+    if skill["image"]:
         col.image(skill["image"], width=60)
     col.write(f"**{skill['name']}**")
 
@@ -121,3 +133,4 @@ Let's connect and collaborate! I am open to internships, projects and junior dev
 # Footer
 st.markdown("---")
 st.write("Made with ❤️ using Streamlit")
+
