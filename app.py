@@ -16,7 +16,6 @@ try:
     html_logo = Image.open("html.png")
     css_logo = Image.open("css.png")
     git_logo = Image.open("git.png")
-    vscode_logo = Image.open("vscode_logo.png")
     sql_logo = Image.open("mysql.png")
     
 except:
@@ -59,7 +58,6 @@ skills = [
     {"name": "HTML", "image": html_logo},
     {"name": "CSS", "image": css_logo},
     {"name": "Git & GitHub", "image": git_logo},
-    {"name": "VS Code", "image": vscode_logo},
     {"name": "Basic SQL", "image": sql_logo},
 ]
 
