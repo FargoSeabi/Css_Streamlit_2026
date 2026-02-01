@@ -16,7 +16,7 @@ def load_image(path):
         return None  # Image missing, return None
 
 # Load images
-profile_pic = load_image("profile-pic.jpg")
+profile_pic = load_image("profile-pic.png")
 python_logo = load_image("python-pic.png")
 js_logo = load_image("pic.png")
 html_logo = load_image("html.png")
