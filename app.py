@@ -5,7 +5,7 @@ from PIL import Image
 st.set_page_config(
     page_title="Moses Seabi | Portfolio",
     layout="wide",
-    page_icon="👨‍💻"
+   
 )
 
 # Function to safely load images
