@@ -30,11 +30,11 @@ with col1:
     if profile_pic:
         st.image(profile_pic, width=150)
 with col2:
-    st.title("👋 Moses Seabi")
+    st.title("Moses Seabi")
     st.subheader("Aspiring Software / Web Developer")
     st.write("""
     Welcome to my **Streamlit Portfolio**!
-    Explore my skills, projects, and contact info.
+    Explore my skills, projects and contact info.
     """)
 
 st.markdown("---")
